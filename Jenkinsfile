@@ -3,14 +3,8 @@ pipeline{
     stages{
         stage('cloning github repo'){
         steps{
-            checkout([$class: 'GitSCM',
-                    branches: [[name: '*/main']],
-                    doGenerateSubmoduleConfigurations: false,
-                    extensions: [[$class: 'CheckoutOption', timeout: 10]],  // Set timeout to 10 seconds
-                    submoduleCfg: [],
-                    userRemoteConfigs: [[url: 'https://github.com/Shubhangi-Sirsat/Terraform-Automation1.git']]
-                ])
-           // checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Shubhangi-Sirsat/Terraform-Automation1.git']])
+           sudo yum install git -y
+           checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Shubhangi-Sirsat/Terraform-Automation1.git']])
         }
     }
 
