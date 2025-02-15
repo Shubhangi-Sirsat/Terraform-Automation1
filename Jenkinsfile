@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('cloning github repo'){
         steps{
-           sudo yum install git -y
+          sh("sudo yum install git -y")
            checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Shubhangi-Sirsat/Terraform-Automation1.git']])
         }
     }
