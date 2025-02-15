@@ -11,7 +11,7 @@ pipeline{
             sh("sudo yum install java-17-amazon-corretto -y")
             sh("sudo yum install git -y")
         }
-        }
+       }
         stage('cloning github repo'){
         steps{
           
