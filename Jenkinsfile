@@ -2,17 +2,15 @@ pipeline{
     agent any
     stages{
 
-        stage('Installing Git'){
+        stage("Installing Git"){
         steps{
-
-            steps{
-                sh("sudo yum update –y")
+            sh("sudo yum update –y")
             sh("sudo yum upgrade")
             sh("sudo yum install java-17-amazon-corretto -y")
             sh("sudo yum install git -y")
         }
        }
-        stage('cloning github repo'){
+        stage("cloning github repo"){
         steps{
           
            checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Shubhangi-Sirsat/Terraform-Automation1.git']])
