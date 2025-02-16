@@ -33,12 +33,11 @@ ingress{
 }
 
 #outbound from jenkins server
-egress{
-    from_port=0
-    to_port=65635
-    protocol="tcp"
+egress {
+    from_port   = 0
+    to_port     = 65535  # ✅ Corrected the port range
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
-
 }
 tags={
     Name= var.security_group
