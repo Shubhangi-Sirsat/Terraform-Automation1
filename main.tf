@@ -67,4 +67,4 @@ resource "aws_eip" "myFirstInsatane" {
     }
 }
 
-}
+
